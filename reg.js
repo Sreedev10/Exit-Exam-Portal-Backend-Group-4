@@ -61,14 +61,18 @@ reg.post("/add", async (req, res) => {
   }
 });
 
+// reg.get("/view", async (req, res) => {
+//   try {
+//     let data = await regModel.find();
+//     res.send(data);
+//   } catch (error) {
+//     console.error('View error:', error);
+//     res.status(500).json({ success: false, message: 'Internal Server Error' });
+//   }
+// });
 reg.get("/view", async (req, res) => {
-  try {
-    let data = await regModel.find();
-    res.send(data);
-  } catch (error) {
-    console.error('View error:', error);
-    res.status(500).json({ success: false, message: 'Internal Server Error' });
-  }
+  let data = await regModel.find();
+  res.send(data);
 });
 
 reg.listen(3200, () => {

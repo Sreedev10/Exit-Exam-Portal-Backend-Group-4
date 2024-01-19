@@ -23,7 +23,7 @@ student.get("/", (req, res) => {
   res.send("Welcome to the exam app");
 });
 
-student.get("/list", async (req, res) => {
+student.get("/viewall", async (req, res) => {
   let data = await studentModel.find();
   res.send(data);
 });
